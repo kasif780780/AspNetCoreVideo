@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 15
+VisualStudioVersion = 15.0.27428.2015
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AspNetCoreVideo", "AspNetCoreVideo\AspNetCoreVideo.csproj", "{635A0616-BBE9-464E-B370-6ABC305862B5}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{635A0616-BBE9-464E-B370-6ABC305862B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{635A0616-BBE9-464E-B370-6ABC305862B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{635A0616-BBE9-464E-B370-6ABC305862B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{635A0616-BBE9-464E-B370-6ABC305862B5}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {B21A4FD4-F87F-4DB0-8701-570C20E23387}
+	EndGlobalSection
+EndGlobal
