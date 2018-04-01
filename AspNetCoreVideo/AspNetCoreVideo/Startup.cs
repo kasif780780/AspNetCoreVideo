@@ -33,7 +33,7 @@ namespace AspNetCoreVideo
 
             app.Run(async (context) =>
             {
-               
+                throw new Exception("Fake Exception");
                 await context.Response.WriteAsync(msg.GetMessage());
             });
         }
