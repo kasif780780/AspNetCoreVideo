@@ -6,8 +6,11 @@ using Microsoft.AspNetCore.Mvc;
 
 namespace AspNetCoreVideo.Controllers
 {
+    [Route("company/[controller]")]
     public class EmployeeController : Controller
     {
+        [Route("")]
+        [Route("[action]")]
         public string Name()
         {
             return "Jonas";
@@ -16,6 +19,7 @@ namespace AspNetCoreVideo.Controllers
         {
             return "Swedan";
         }
+        [Route("[action]")]
         public string Index()
         {
             return "Hello From Employee";
