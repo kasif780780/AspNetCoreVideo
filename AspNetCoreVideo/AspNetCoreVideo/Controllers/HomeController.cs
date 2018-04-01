@@ -11,7 +11,12 @@ namespace AspNetCoreVideo.Controllers
     {
         public ViewResult Index()
         {
-            var model = new Video { Id = 1, Title = "Shreck" };
+            var model = new List<Video>
+            {
+                new Video{Id=1,Title="Shreck"},
+                new Video{Id=2,Title="Despicable ME"},
+                new Video{Id=3,Title="MegaMind"}
+            };
             return View(model);
         }
     }

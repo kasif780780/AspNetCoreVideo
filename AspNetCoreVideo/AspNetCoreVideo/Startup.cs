@@ -32,9 +32,16 @@ namespace AspNetCoreVideo
             {
                 app.UseDeveloperExceptionPage();
             }
+
             app.UseMvcWithDefaultRoute();
-           
-         // app.UseStaticFiles();
+            app.UseMvc(routes =>
+            {
+                routes.MapRoute(
+                name: "default",
+                template: "",
+                defaults: new { controller = "Home", action = "Index" });
+            });
+            // app.UseStaticFiles();
             app.Run(async (context) =>
             {
 
