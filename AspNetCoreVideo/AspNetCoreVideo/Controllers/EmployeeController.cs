@@ -10,18 +10,18 @@ namespace AspNetCoreVideo.Controllers
     public class EmployeeController : Controller
     {
        
-        public string Name()
+        public ContentResult Name()
         {
-            return "Jonas";
+            return Content("Jonas");
         }
-        public string Country()
+        public ContentResult Country()
         {
-            return "Swedan";
+            return Content("Swedan");
         }
         
-        public string Index()
+        public ContentResult Index()
         {
-            return "Hello From Employee";
+            return Content("Hello From Employee");
         }
     }
 }
