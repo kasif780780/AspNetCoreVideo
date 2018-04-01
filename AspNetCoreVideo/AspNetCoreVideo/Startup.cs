@@ -9,6 +9,7 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using AspNetCoreVideo.Services;
+using Microsoft.AspNetCore.StaticFiles;
 
 namespace AspNetCoreVideo
 {
@@ -31,10 +32,11 @@ namespace AspNetCoreVideo
                 app.UseDeveloperExceptionPage();
             }
 
+            app.UseStaticFiles();
             app.Run(async (context) =>
             {
-                throw new Exception("Fake Exception");
-                await context.Response.WriteAsync(msg.GetMessage());
+
+      await context.Response.WriteAsync(msg.GetMessage());
             });
         }
 
