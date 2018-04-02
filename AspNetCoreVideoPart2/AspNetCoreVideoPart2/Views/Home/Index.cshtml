@@ -1,5 +1,5 @@
 ﻿
-@model IEnumerable<AspNetCoreVideoPart2.Entities.Video>
+@model IEnumerable<AspNetCoreVideoPart2.ViewModels.VideoViewModel>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
@@ -12,8 +12,11 @@
         <tr>
             <td>@item.Id</td>
             <td>@item.Title</td>
+            <td>
+                @item.Genre
+        </td>
         </tr>
         }
     </table>
 </body>
-</html>
+</html

@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AspNetCoreVideoPart2.Entities;
 using AspNetCoreVideoPart2.Services;
+using AspNetCoreVideoPart2.ViewModels;
 
 namespace AspNetCoreVideoPart2
 {
@@ -20,9 +21,19 @@ namespace AspNetCoreVideoPart2
 
         public ViewResult Index()
         {
-            var model = _videos.GetAll();
+            var model = _videos.GetAll().Select(video =>
+            new VideoViewModel
+            {
+                Id = video.Id,
+                Title = video.Title,
+                Genre = Enum.GetName(typeof(Genres), video.GenreId)
+
+            });
 
             return View(model);
+
+        }
+
+            
         }
     }
-}
