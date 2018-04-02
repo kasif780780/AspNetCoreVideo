@@ -7,6 +7,7 @@ using AspNetCoreVideo.Models;
 
 namespace AspNetCoreVideo.Controllers
 {
+    [Route("cst/[controller]/[action]")]
     public class HomeController : Controller
     {
         public ViewResult Index()
