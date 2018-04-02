@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
-using AspNetCoreVideoPart2.Models;
+using AspNetCoreVideoPart2.Entities;
 
 namespace AspNetCoreVideoPart2.Services
 {

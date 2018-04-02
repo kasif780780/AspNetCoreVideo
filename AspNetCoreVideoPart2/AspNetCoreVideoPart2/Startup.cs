@@ -7,7 +7,7 @@ using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using AspNetCoreVideoPart2.Services;
-using AspNetCoreVideoPart2.Models;
+using AspNetCoreVideoPart2.Entities;
 
 namespace AspNetCoreVideoPart2
 {
