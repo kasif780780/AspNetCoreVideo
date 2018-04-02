@@ -1,11 +1,19 @@
 ﻿
-@model AspNetCoreVideoPart2.Models.Video
+@model IEnumerable<AspNetCoreVideoPart2.Models.Video>
 
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <title>Video</title>
 </head>
 <body>
-    @Model.Title
+    <table>
+        @foreach (var item in Model)
+        {
+        <tr>
+            <td>@item.Id</td>
+            <td>@item.Title</td>
+        </tr>
+        }
+    </table>
 </body>
 </html>
