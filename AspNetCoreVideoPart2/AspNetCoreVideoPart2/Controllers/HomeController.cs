@@ -4,38 +4,23 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using AspNetCoreVideoPart2.Models;
+using AspNetCoreVideoPart2.Services;
 
 namespace AspNetCoreVideoPart2
 {
     
     public class HomeController : Controller
     {
-        //public ViewResult Index()
-        //{
-        //    var model = new List<Video>
-        //    {
-        //        new Video{Id=1,Title="Shreck"},
-        //        new Video{Id=2,Title="Despicable ME"},
-        //        new Video{Id=3,Title="MegaMind"}
-        //    };
-        //    return View(model);
-        //}
+        private IVideo _videos; public
+           
+       HomeController(IVideo videos)
+        {
+            _videos = videos;
+        }
 
         public ViewResult Index()
         {
-            var model = new List<Video>
-
-            {
-                new Video{Id=1,Title="Shreck"},
-               new Video{Id=2,Title="Despicable ME"},
-               new Video{Id=3,Title="MegaMind"}
-            };
-
-
-
-                //new Video{Id=2,Title="Despicable ME"},
-                //new Video{Id=3,Title="MegaMind"}
-
+            var model = _videos.GetAll();
 
             return View(model);
         }
