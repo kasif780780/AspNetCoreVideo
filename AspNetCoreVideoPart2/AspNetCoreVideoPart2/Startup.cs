@@ -8,12 +8,28 @@ using Microsoft.AspNetCore.Http;
 using Microsoft.Extensions.DependencyInjection;
 using AspNetCoreVideoPart2.Services;
 using AspNetCoreVideoPart2.Entities;
+using Microsoft.Extensions.Configuration;
+using System.IO;
 
 namespace AspNetCoreVideoPart2
 {
     public class Startup
 
     {
+        public IConfiguration Configuration { get; set; }
+
+        public Startup(IHostingEnvironment env)
+        {
+            var builder = new ConfigurationBuilder()
+                .SetBasePath(Directory.GetCurrentDirectory())
+                .AddJsonFile("appsettings.json");   
+            //.AddJsonFile("appsettings.json", optional: true); 
+
+            if (env.IsDevelopment())
+                builder.AddUserSecrets<Startup>();
+
+             Configuration= builder.Build();
+        }
         // This method gets called by the runtime. Use this method to add services to the container.
         // For more information on how to configure your application, visit https://go.microsoft.com/fwlink/?LinkID=398940
         public void ConfigureServices(IServiceCollection services)
