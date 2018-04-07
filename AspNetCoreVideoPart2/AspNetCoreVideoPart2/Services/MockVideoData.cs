@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using AspNetCoreVideoPart2.Entities;
+using AspNetCoreVideoPart2.ViewModels;
 
 namespace AspNetCoreVideoPart2.Services
 {
@@ -16,9 +17,9 @@ namespace AspNetCoreVideoPart2.Services
         {
             _videos = new List<Video>
             {
-                new Video{Id=1,GenreId=1,Title="Shreck"},
-               new Video{Id=2,GenreId=1,Title="Despicable ME"},
-               new Video{Id=3, GenreId=1,Title="MegaMind"}
+                new Video{Id=1, Genre=ViewModels.Genres,Title="Shreck"},
+               new Video{Id=2,Genre=ViewModels.Genres,Title="Despicable ME"},
+               new Video{Id=3, Genre=ViewModels.Genres,Title="MegaMind"}
             };
         }
         public IEnumerable<Video> GetAll()
