@@ -12,9 +12,9 @@ namespace AspNetCoreVideoPart2
     
     public class HomeController : Controller
     {
-        private IVideo _videos; public
-           
-       HomeController(IVideo videos)
+        private IVideo _videos;
+
+        public HomeController(IVideo videos)
         {
             _videos = videos;
         }
@@ -32,6 +32,12 @@ namespace AspNetCoreVideoPart2
 
             return View(model);
 
+        }
+        public IActionResult Details(int id)
+        {
+
+            var model = _videos.Get(id);
+            return new ObjectResult(model);
         }
 
             
