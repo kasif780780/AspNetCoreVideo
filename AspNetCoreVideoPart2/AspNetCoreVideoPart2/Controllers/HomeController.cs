@@ -62,13 +62,20 @@ namespace AspNetCoreVideoPart2
         [HttpPost]
         public IActionResult Create(VideoEditViewModel model)
         {
-            var video = new Video
+            if (ModelState.IsValid)
             {
-                Title = model.Title,
-                Genre = model.Genre
-            };
-            _videos.Add(video);
-            return RedirectToAction("Details", new { id = video.Id });
+                var video = new Video
+                {
+                    Title = model.Title,
+                    Genre = model.Genre
+                };
+
+                _videos.Add(video);
+                return RedirectToAction("Details", new { id = video.Id });
+            }
+
+            return View();
+           
         }
 
     }
