@@ -37,6 +37,11 @@ namespace AspNetCoreVideoPart2
         {
 
             var model = _videos.Get(id);
+
+            if(model==null)
+            {
+                return RedirectToAction("Index");
+            }
             return View(new VideoViewModel
             {
                 Id = model.Id,
