@@ -1,6 +1,6 @@
 ﻿@using AspNetCoreVideoPart2.ViewModels
 @model AspNetCoreVideoPart2.Entities.Video
-@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers 
+@addTagHelper *, Microsoft.AspNetCore.Mvc.TagHelpers
 
 <h2>Craete Video</h2>
 <form asp-action="Create" method="post">
@@ -18,3 +18,4 @@
     </table>
     <input type="submit" value="Create" />
 </form>
+<a asp-action="Index">Back to List</a> 
