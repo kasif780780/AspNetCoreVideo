@@ -48,8 +48,14 @@ namespace AspNetCoreVideoPart2
                 Title = model.Title,
                 Genre = model.Genre.ToString()
     });
-        }
+            }
 
-            
+          public IActionResult Create()
+           {
+
+
+                 return View();
+
+            }
         }
     }

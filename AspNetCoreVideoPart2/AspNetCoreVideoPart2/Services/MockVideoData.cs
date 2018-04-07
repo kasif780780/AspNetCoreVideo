@@ -17,9 +17,9 @@ namespace AspNetCoreVideoPart2.Services
         {
             _videos = new List<Video>
             {
-                new Video{Id=1, Genre=ViewModels.Genres,Title="Shreck"},
-               new Video{Id=2,Genre=ViewModels.Genres,Title="Despicable ME"},
-               new Video{Id=3, Genre=ViewModels.Genres,Title="MegaMind"}
+                new Video{Id=1, Genre=ViewModels.Genres.Animated,Title="Shreck"},
+               new Video{Id=2,Genre=ViewModels.Genres.Animated,Title="Despicable ME"},
+               new Video{Id=3, Genre=ViewModels.Genres.Animated,Title="MegaMind"}
             };
         }
         public IEnumerable<Video> GetAll()
