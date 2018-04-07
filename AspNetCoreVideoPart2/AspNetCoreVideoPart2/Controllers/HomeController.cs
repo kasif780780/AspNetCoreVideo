@@ -37,7 +37,12 @@ namespace AspNetCoreVideoPart2
         {
 
             var model = _videos.Get(id);
-            return new ObjectResult(model);
+            return View(new VideoViewModel
+            {
+                Id = model.Id,
+                Title = model.Title,
+                Genre = Enum.GetName(typeof(Genres), model.GenreId)
+            });
         }
 
             
