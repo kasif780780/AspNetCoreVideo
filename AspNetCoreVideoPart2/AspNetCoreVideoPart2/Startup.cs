@@ -10,6 +10,8 @@ using AspNetCoreVideoPart2.Services;
 using AspNetCoreVideoPart2.Entities;
 using Microsoft.Extensions.Configuration;
 using System.IO;
+using AspNetCoreVideoPart2.Data;
+using Microsoft.EntityFrameworkCore;
 
 namespace AspNetCoreVideoPart2
 {
@@ -37,6 +39,8 @@ namespace AspNetCoreVideoPart2
 
             services.AddMvc();
             services.AddSingleton<IVideo, MockVideoData>();
+            var conn = Configuration.GetConnectionString("DefaultConnection");
+            services.AddDbContext<VideoDbContext>(options => options.UseSqlServer(conn));
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
