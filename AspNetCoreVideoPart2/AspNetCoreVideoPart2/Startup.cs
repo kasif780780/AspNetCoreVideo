@@ -20,7 +20,7 @@ namespace AspNetCoreVideoPart2
         {
 
             services.AddMvc();
-            services.AddScoped<IVideo, MockVideoData>();
+            services.AddSingleton<IVideo, MockVideoData>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

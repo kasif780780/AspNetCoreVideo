@@ -67,7 +67,8 @@ namespace AspNetCoreVideoPart2
                 Title = model.Title,
                 Genre = model.Genre
             };
-            return View();
+            _videos.Add(video);
+            return RedirectToAction("Details", new { id = video.Id });
         }
 
     }
