@@ -39,7 +39,8 @@ namespace AspNetCoreVideoPart2
             var conn = Configuration.GetConnectionString("DefaultConnection");
             services.AddDbContext<VideoDbContext>(options => options.UseSqlServer(conn));
             services.AddMvc();
-            services.AddSingleton<IVideo, MockVideoData>();
+          
+            services.AddScoped<IVideo, SqlVideoData>();
             
         }
 
