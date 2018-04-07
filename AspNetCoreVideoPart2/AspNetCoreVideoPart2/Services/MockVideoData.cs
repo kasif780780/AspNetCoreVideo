@@ -11,7 +11,7 @@ namespace AspNetCoreVideoPart2.Services
     
     public class MockVideoData:IVideo
     {
-        private IEnumerable<Video> _videos; //This field will hold the video data, loaded from a constructor
+        private List<Video> _videos; //This field will hold the video data, loaded from a constructor
 
         public MockVideoData()
         {
@@ -29,6 +29,12 @@ namespace AspNetCoreVideoPart2.Services
         public Video Get(int id)
         {
             return _videos.FirstOrDefault(v => v.Id.Equals(id));
+        }
+
+        public void Add(Video newVideo)
+        {
+            newVideo.Id = _videos.Max(v => v.Id) + 1;
+
         }
     }
 }

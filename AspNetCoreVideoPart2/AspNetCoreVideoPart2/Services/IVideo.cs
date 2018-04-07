@@ -9,6 +9,9 @@ namespace AspNetCoreVideoPart2.Services
   public interface IVideo
     {
         IEnumerable<Video> GetAll();
+
         Video Get(int id);
+        void Add(Video newVideo);
+
     }
 }

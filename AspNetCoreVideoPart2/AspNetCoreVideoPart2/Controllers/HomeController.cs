@@ -50,6 +50,7 @@ namespace AspNetCoreVideoPart2
     });
             }
 
+        [HttpGet]
           public IActionResult Create()
            {
 
@@ -57,5 +58,18 @@ namespace AspNetCoreVideoPart2
                  return View();
 
             }
+
+        [HttpPost]
+        public IActionResult Create(VideoEditViewModel model)
+        {
+            var video = new Video
+            {
+                Title = model.Title,
+                Genre = model.Genre
+            };
+            return View();
         }
+
     }
+
+}
