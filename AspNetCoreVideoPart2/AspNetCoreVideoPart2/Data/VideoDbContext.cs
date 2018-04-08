@@ -6,11 +6,12 @@ using System.Threading.Tasks;
 using AspNetCoreVideoPart2.Entities;
 using AspNetCoreVideoPart2.ViewModels;
 using AspNetCoreVideoPart2.Services;
-
+using Microsoft.AspNetCore.Identity;
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace AspNetCoreVideoPart2.Data
 {
-    public class VideoDbContext:DbContext
+    public class VideoDbContext:IdentityDbContext
     {
 
         public DbSet<Video> Videos { get; set; }
