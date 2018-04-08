@@ -58,7 +58,7 @@ namespace AspNetCoreVideoPart2
             }
             app.UseAuthentication();
             app.UseMvcWithDefaultRoute();
-           // app.UseStaticFiles();
+            app.UseStaticFiles();
 
             app.UseMvc(routes =>
             {
