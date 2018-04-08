@@ -18,6 +18,14 @@ namespace AspNetCoreVideoPart2.Controllers
             _userManager = userManager;
             _signInManager = signInManager;
         }
+
+
+        [HttpGet]
+        public IActionResult Login(string returnUrl = "")
+        {
+            var model = new LoginViewModel { ReturnUrl = returnUrl };
+            return View(model);
+        }
         [HttpGet]
         public IActionResult Register()
         {
