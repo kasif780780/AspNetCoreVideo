@@ -56,6 +56,7 @@ namespace AspNetCoreVideoPart2
             {
                 app.UseDeveloperExceptionPage();
             }
+            app.UseAuthentication();
             app.UseMvcWithDefaultRoute();
            // app.UseStaticFiles();
 
