@@ -51,13 +51,40 @@ namespace AspNetCoreVideoPart2
             }
 
         [HttpGet]
-          public IActionResult Create()
+          public IActionResult Edit(int id)
            {
 
 
-                 return View();
+            var video = _videos.Get(id);
 
-            }
+            if (video == null) return RedirectToAction("Index");
+
+            return View(video);
+
+        }
+        [HttpPost]
+        public IActionResult Edit(int id, VideoEditViewModel model)
+
+        {
+            var video = _videos.Get(id);
+
+            if (video == null || !ModelState.IsValid) return View(model);
+
+            video.Title = model.Title; video.Genre = model.Genre;
+
+            _videos.Commit();
+
+            return RedirectToAction("Details", new { id = video.Id });
+
+        }
+        [HttpGet]
+        public IActionResult Create()
+        {
+
+
+            return View();
+
+        }
 
         [HttpPost]
         public IActionResult Create(VideoEditViewModel model)

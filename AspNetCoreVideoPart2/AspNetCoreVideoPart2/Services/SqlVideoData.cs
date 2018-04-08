@@ -23,6 +23,10 @@ namespace AspNetCoreVideoPart2.Services
             _db.Add(newVideo);
             _db.SaveChanges();
         }
+        public int Commit()
+        {
+            return _db.SaveChanges();
+        }
         public Video Get(int id)
         {
             return _db.Find<Video>(id);
@@ -31,6 +35,7 @@ namespace AspNetCoreVideoPart2.Services
         {
             return _db.Videos;
         }
+       
     }
     
 }

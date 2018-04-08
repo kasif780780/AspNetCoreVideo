@@ -12,6 +12,6 @@ namespace AspNetCoreVideoPart2.Services
 
         Video Get(int id);
         void Add(Video newVideo);
-
+        int Commit();
     }
 }
