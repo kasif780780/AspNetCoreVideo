@@ -12,6 +12,8 @@ using Microsoft.Extensions.Configuration;
 using System.IO;
 using AspNetCoreVideoPart2.Data;
 using Microsoft.EntityFrameworkCore;
+using Microsoft.AspNetCore.Identity;
+
 
 namespace AspNetCoreVideoPart2
 {
