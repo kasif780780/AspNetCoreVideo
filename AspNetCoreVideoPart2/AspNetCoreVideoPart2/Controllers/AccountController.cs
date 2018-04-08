@@ -31,7 +31,7 @@ namespace AspNetCoreVideoPart2.Controllers
                 return View();
 
             var user = new User { UserName = model.UserName };
-
+            var result = await _userManager.CreateAsync(user, model.Password);
             return View();
         }
     }
