@@ -37,6 +37,10 @@ namespace AspNetCoreVideoPart2.Controllers
                 await _signInManager.SignInAsync(user, false);
                 return RedirectToAction("Index", "Home");
             }
+            else
+            {
+                foreach (var error in result.Errors) ModelState.AddModelError("", error.Description);
+            }
             return View();
         }
     }

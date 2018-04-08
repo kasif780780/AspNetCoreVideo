@@ -11,7 +11,7 @@ using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 
 namespace AspNetCoreVideoPart2.Data
 {
-    public class VideoDbContext:IdentityDbContext
+    public class VideoDbContext:IdentityDbContext<User>
     {
 
         public DbSet<Video> Videos { get; set; }
