@@ -1,5 +1,6 @@
-﻿#login-panel-heading{
-    margin-top:40px;
+﻿
+#login-panel-heading, .panel-register-panel {
+    margin-top: 40px;
 }
 .login-panel {
     width: 280px;
@@ -7,5 +8,45 @@
 }
 .login-panel-body {
     border: 1px solid #cecece !important;
-    padding: 20px;
+    padding: 50px;
+    margin-top: 50px;
+    width: 380px;
+    box-shadow: 5px 10px 5px #888888;
+   
+}
+.login-form-submit {
+    margin-bottom: 0px;
+    padding-bottom: 0px;
+}
+.icon-addon{
+    position: relative;
+    color: #555;
+    display: block;
+}
+    .icon-addon .glyphicon {
+        position: absolute;
+        left: 10px;
+        padding: 10px 0;
+    }
+    .icon-addon .form-control {
+        Padding-left: 30px;
+        border-radius: 0;
+    }
+
+    .icon-addon:hover .glyphicon {
+        color: #2580db;
+    }
+.login-form button {
+    width: 100%;
+}
+.login-form .validation-summary-errors ul {
+    padding-left: 20px;
+}
+.register-panel-body {
+    border: 1px solid #cecece !important;
+    padding: 50px;
+    margin-top: 50px;
+    width: 380px;
+    height:450px;
+    box-shadow: 5px 10px 5px #888888;
 }
