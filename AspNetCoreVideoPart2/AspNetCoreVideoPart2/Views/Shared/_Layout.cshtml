@@ -4,14 +4,45 @@
 <head>
     <meta name="viewport" content="width=device-width" />
     <title>@ViewBag.Title</title>
+    <environment include="Development">
+        <link href="~/lib/bootstrap/dist/css/bootstrap.css" rel="stylesheet" />
+    </environment>
+    <environment exclude="Development">
+        <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/Bootstrap/3.3.7/css/Bootstrap.min.css"
+              asp-fallback-href="~/lib/Bootstrap/dist/css/Bootstrap.min.css"
+              asp-fallback-test-class="sr-only"
+              asp-fallback-test-property="position"
+              asp-fallback-test-value="absolute" />
+    </environment>
 </head>
+<nav class="navbar navbar-default">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <a class="navbar-brand" href="/">
+                Video Application
+            </a>
+
+        </div>
+        <div class="nav navbar-nav pull-right"> @await Html.PartialAsync("_LoginLinks") </div>
+    </div>
+</nav>
 <body>
     <div>
-        <div> @await Html.PartialAsync("_LoginLinks") </div>
+       
+
         @RenderBody()
     </div>
     <footer style="margin-bottom:40px;">
-        @RenderSection("footer",false)
+        @RenderSection("footer", false)
     </footer>
 </body>
 </html>
+<environment include="Development">
+<script src="~/lib/jquery/dist/jquery.js"></script>
+<script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+<script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script> </environment> 
+<environment exclude="Development">
+<script src="https://ajax.aspnetcdn.com/ajax/jquery/jquery-3.2.1.min.js" asp-fallback-src="~/lib/jquery/dist/jquery.js" asp-fallback-test="window.jQuery">
+
+</script>
+   </environment>
