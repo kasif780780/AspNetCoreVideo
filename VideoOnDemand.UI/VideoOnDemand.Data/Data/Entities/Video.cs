@@ -22,8 +22,10 @@ namespace VideoOnDemand.Data.Entities
         public int Position { get; set; }
 
         public int ModuleId { get; set; }
-        public Module Module { get; set; }    
+        public Module Module { get; set; }
         // Side-step from 3rd normal form for easier    
-        // access to a video’s course     public int CourseId { get; set; }     public Course Course { get; set; } }
+        // access to a video’s course   
+        public int CourseId { get; set; }
+        public Course Course { get; set; } }
     }
 }
