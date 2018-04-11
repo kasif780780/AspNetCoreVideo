@@ -26,6 +26,6 @@ namespace VideoOnDemand.Data.Entities
         // Side-step from 3rd normal form for easier    
         // access to a video’s course   
         public int CourseId { get; set; }
-        public Course Course { get; set; } }
+        public Course Course { get; set; } 
     }
 }

@@ -13,6 +13,7 @@ using VideoOnDemand.UI.Models;
 using VideoOnDemand.UI.Services;
 using VideoOnDemand.Data.Data;
 using VideoOnDemand.Data.Data.Entities;
+using VideoOnDemand.UI.Repositories;
 
 namespace VideoOnDemand.UI
 {
@@ -37,8 +38,9 @@ namespace VideoOnDemand.UI
 
             // Add application services.
             services.AddTransient<IEmailSender, EmailSender>();
-
+            services.AddSingleton<IReadRepository, MockReadRepository>();
             services.AddMvc();
+            
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

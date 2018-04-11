@@ -6,7 +6,7 @@ using VideoOnDemand.Data.Entities;
 
 namespace VideoOnDemand.UI.Repositories
 {
-    interface IReadRepository
+  public  interface IReadRepository
     {
         IEnumerable<Course> GetCourses(string userId);
 
