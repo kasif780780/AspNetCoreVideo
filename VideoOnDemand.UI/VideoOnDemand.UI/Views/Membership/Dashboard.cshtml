@@ -5,12 +5,13 @@
 
 <h2>Dashboard</h2>
 
+
 @foreach (var dashboardrow in Model.Courses)
 {
     <div class="row">
         @foreach(var course in dashboardrow)
         {
-            <h4>@course.CourseTitle</h4>
+            @await Html.PartialAsync("_CoursePanelPartial",course)
 
         }
     </div>

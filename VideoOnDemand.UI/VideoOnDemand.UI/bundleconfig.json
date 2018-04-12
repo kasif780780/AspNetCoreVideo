@@ -9,7 +9,8 @@
       "wwwroot/css/Login.css",
       "wwwroot/css/menu.css",
       "wwwroot/css/course-panel.css",
-      "wwwroot/css/Membership.css"
+      "wwwroot/css/Membership.css",
+      "wwwroot/css/course.css"
     ]
   },
   {
