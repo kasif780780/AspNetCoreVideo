@@ -1,8 +1,10 @@
-﻿@model LoginViewModel
-@using System.Linq
-@using Microsoft.AspNetCore.Identity
-@using VideoOnDemand.UI.Models
-@using VideoOnDemand.Data.Data.Entities
+﻿
+@using VideoOnDemand.Data.Data.Entities;
+
+@inject SignInManager<User> SignInManager
+
+
+
 
 @inject SignInManager<User> SignInManager
 @inject UserManager<User> UserManager
@@ -55,7 +57,7 @@
 
                 @await Html.PartialAsync("_LoginPartial")
             </div>
-          
+
         </div>
     </nav>
     <div class="container body-content">

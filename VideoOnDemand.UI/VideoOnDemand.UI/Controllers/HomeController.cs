@@ -30,8 +30,9 @@ namespace VideoOnDemand.UI.Controllers
             var videosForModules = rep.GetVideos("4d79c09d-6161-4541-a6de-97daed5ec8b6", 1);
 
             if (!_signInManager.IsSignedIn(User))
-                return RedirectToAction("Login", "Account");
-            return View();
+              return RedirectToAction("Login", "Account");
+            return RedirectToAction("Dashboard", "Membership");
+
         }
 
         public IActionResult About()
