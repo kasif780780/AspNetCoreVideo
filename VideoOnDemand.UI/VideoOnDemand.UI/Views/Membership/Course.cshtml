@@ -60,9 +60,15 @@
            @foreach(var module in Model.Modules)
            {
                <div class="panel module">
+
                    <div class="panel-body">
                        <h5>@module.ModuleTitle</h5>
                    </div>
+                   @if(module.Videos!=null)
+                   {
+                       @await Html.PartialAsync("_ModulesVideosPartial",module.Videos)
+
+                   }
                </div>
 
            }
