@@ -56,7 +56,7 @@ namespace VideoOnDemand.UI.Repositories
 
                 CourseId = 2 },
 
-            new UserCourse { UserId = "3fcd8c17-0a83-4c70-8b1c-9b2d4131a92f",
+            new UserCourse { UserId = "4d79c09d-6161-4541-a6de-97daed5ec8b6",
 
                 CourseId = 3 },
 
@@ -228,7 +228,7 @@ namespace VideoOnDemand.UI.Repositories
 
                 module.Downloads = _downloads.Where(d => d.ModuleId.Equals(module.Id)).ToList();
 
-                //module.Videos = _videos.Where(v => v.ModuleId.Equals(module.Id)).ToList();
+                module.Videos = _videos.Where(v => v.ModuleId.Equals(module.Id)).ToList();
 
             }
 
@@ -264,8 +264,7 @@ namespace VideoOnDemand.UI.Repositories
 
             var videos = _videos
 
-                .Join(_userCourses, v => v.CourseId, uc => uc.CourseId, 
-                (v, uc) => new { Video = v, UserCourse = uc })
+                .Join(_userCourses, v => v.CourseId, uc => uc.CourseId, (v, uc) => new { Video = v, UserCourse = uc })
 
                 .Where(vuc => vuc.UserCourse.UserId.Equals(userId));
 
@@ -277,6 +276,6 @@ namespace VideoOnDemand.UI.Repositories
 
                 videos.Where(v => v.Video.ModuleId.Equals(moduleId)).Select(s => s.Video);
 
-            }
         }
+    }
 }
