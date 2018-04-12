@@ -11,7 +11,8 @@
       "wwwroot/css/course-panel.css",
       "wwwroot/css/Membership.css",
       "wwwroot/css/course.css",
-      "wwwroot/css/module.css"
+      "wwwroot/css/module.css",
+      "wwwroot/css/instructor.css"
     ]
   },
   {

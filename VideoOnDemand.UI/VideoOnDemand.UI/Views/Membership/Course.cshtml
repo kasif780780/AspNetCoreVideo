@@ -55,105 +55,109 @@
 
     </div>
 
-   <div class="row">
-       <div class="col-sm-9">
-           @foreach(var module in Model.Modules)
-           {
-               <div class="panel module">
+    <div class="row">
+        <div class="col-sm-9">
+            @foreach (var module in Model.Modules)
+            {
+                <div class="panel module" style="padding: 10px;
+    box-shadow: 3px 5px #888888;">
 
-                   <div class="panel-body">
-                       <h5>@module.ModuleTitle</h5>
-                   </div>
-                   @if(module.Videos!=null)
-                   {
-                       @await Html.PartialAsync("_ModulesVideosPartial",module.Videos)
+                    <div class="panel-body">
+                        <h5>@module.ModuleTitle</h5>
+                    </div>
+                    @if (module.Videos != null)
+                    {
+                        @await Html.PartialAsync("_ModulesVideosPartial", module.Videos)
 
-                   }
+                    }
                     @if (module.Downloads != null)
 
-                        {
+                    {
 
-                            <hr class="no-margin">
+                        <hr class="no-margin">
 
-                            <div class="panel-body download-panel">
+                        <div class="panel-body download-panel">
 
-                                <h5>Downloads</h5>
+                            <h5>Downloads</h5>
 
-                                @await Html.PartialAsync("_ModuleDownloadsPartial", module.Downloads)
-
-                            </div>
-
-                        }
-               </div>
-
-           }
-       </div>
-       <div class="col-sm-3">
-
-       </div>
-   </div>
-
-    </div>
-    @*<div class="row">
-
-            <div class="col-sm-9">
-
-                @foreach (var module in Model.Modules)
-
-                {
-
-                    <div class="panel module">
-
-                        <div class="panel-body">
-
-                            <h5>@module.ModuleTitle</h5>
+                            @await Html.PartialAsync("_ModuleDownloadsPartial", module.Downloads)
 
                         </div>
 
+                    }
+                </div>
 
+            }
+        </div>
+        <div class="col-sm-3">
+            @if (Model.Instructor != null)
+            {
+                @await Html.PartialAsync("_InstructorBioPartial", Model.Instructor)
+            }
+        </div>
+    </div>
 
-                        @if (module.Videos != null)
+</div>
+@*<div class="row">
 
-                        {
+        <div class="col-sm-9">
 
-                            @await Html.PartialAsync("_ModuleVideosPartial", module.Videos)
+            @foreach (var module in Model.Modules)
 
-                        }
+            {
 
+                <div class="panel module">
 
+                    <div class="panel-body">
 
-                        @if (module.Downloads != null)
-
-                        {
-
-                            <hr class="no-margin">
-
-                            <div class="panel-body download-panel">
-
-                                <h5>Downloads</h5>
-
-                                @await Html.PartialAsync("_ModuleDownloadsPartial", module.Downloads)
-
-                            </div>
-
-                        }
+                        <h5>@module.ModuleTitle</h5>
 
                     </div>
 
-                }
 
-            </div>
 
-            <div class="col-sm-3">
+                    @if (module.Videos != null)
 
-                @if (Model.Instructor != null)
+                    {
 
-                {
+                        @await Html.PartialAsync("_ModuleVideosPartial", module.Videos)
 
-                    @await Html.PartialAsync("_InstructorBioPartial", Model.Instructor)
+                    }
 
-                }
 
-            </div>
 
-        </div>*@
+                    @if (module.Downloads != null)
+
+                    {
+
+                        <hr class="no-margin">
+
+                        <div class="panel-body download-panel">
+
+                            <h5>Downloads</h5>
+
+                            @await Html.PartialAsync("_ModuleDownloadsPartial", module.Downloads)
+
+                        </div>
+
+                    }
+
+                </div>
+
+            }
+
+        </div>
+
+        <div class="col-sm-3">
+
+            @if (Model.Instructor != null)
+
+            {
+
+                @await Html.PartialAsync("_InstructorBioPartial", Model.Instructor)
+
+            }
+
+        </div>
+
+    </div>*@
