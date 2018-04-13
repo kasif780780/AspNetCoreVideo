@@ -11,9 +11,10 @@ using VideoOnDemand.Data.Data;
 namespace VideoOnDemand.Data.Migrations
 {
     [DbContext(typeof(VODContext))]
-    partial class VODContextModelSnapshot : ModelSnapshot
+    [Migration("20180413135015_CreateVideoRelatedData")]
+    partial class CreateVideoRelatedData
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
