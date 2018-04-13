@@ -1,71 +1,81 @@
 ﻿@using VideoOnDemand.UI.Models.MembershipViewModel
+
 @model VideoViewModel
 
 
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
+<link href="http://vjs.zencdn.net/6.6.3/video-js.css" rel="stylesheet">
 
-<div class="panel">
+<!-- If you'd like to support IE8 -->
+<script src="http://vjs.zencdn.net/ie8/1.1.2/videojs-ie8.min.js"></script>
+<link href="//netdna.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">
+<script src="//netdna.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script src="//code.jquery.com/jquery-1.11.1.min.js"></script>
 
-    @if (Model.Video.Url != null)
+@if (Model.Video.Url != null)
 
-    {
-
-        <div id="video" class="video-margin">&nbsp;</div>
+{
+<div class="video video-margin ">
+    <iframe width="560" height="315"
+            src="@Model.Video.Url" frameborder="0" allow="autoplay; encrypted-media"
+            allowfullscreen></iframe>
+</div> 
+    @*<div id="video" class="video-margin">&nbsp;</div>
 
         <div id="hiddenUrl" hidden="hidden">@Model.Video.Url</div>
 
-        <div id="hiddenImageUrl" hidden="hidden">@Model.Video.Thumbnail</div>
-        <div class="vid">
-            <iframe width="560" height="315"
-                    src="@Model.Video.Url" frameborder="0" allow="autoplay; encrypted-media"
-                    allowfullscreen></iframe>
-        </div>
+        <div id="hiddenImageUrl" hidden="hidden">@Model.Video.Thumbnail</div>*@
 
-    }
+}
 
 
 
-    <div class="panel-body">
+<div class="panel-body">
 
-        <h2 class="text-dark">@Model.Video.Title</h2>
+    <h2 class="text-dark">@Model.Video.Title</h2>
 
-        <p class="text-light">
+    <p class="text-light">
 
-            <i class="glyphicon glyphicon-facetime-video"></i>
+        <i class="glyphicon glyphicon-facetime-video"></i>
 
-            Lesson @Model.LessonInfo.LessonNumber/
+        Lesson @Model.LessonInfo.LessonNumber/
 
-            @Model.LessonInfo.NumberOfLessons&nbsp;&nbsp;
+        @Model.LessonInfo.NumberOfLessons&nbsp;&nbsp;
 
-            <i class="glyphicon glyphicon-time"></i>
+        <i class="glyphicon glyphicon-time"></i>
 
-            @Model.Video.Duration minutes
+        @Model.Video.Duration minutes
 
-        </p>
+    </p>
 
-        <div class="media-object">
+    <div class="media-object">
 
-            <div class="media-left">
+        <div class="media-left">
 
-                <img src="@Model.Course.CourseImageUrl">
-
-            </div>
-
-            <div class="media-body media-middle">
-
-                <p>@Model.Course.CourseTitle</p>
-
-            </div>
+            <img src="@Model.Course.CourseImageUrl">
 
         </div>
 
-    </div>
+        <div class="media-body media-middle">
 
-    <hr class="no-margin">
+            <p>@Model.Course.CourseTitle</p>
 
-    <div class="panel-body">
-
-        @Model.Video.Description
+        </div>
 
     </div>
 
 </div>
+
+<hr class="no-margin">
+
+<div class="panel-body">
+
+    @Model.Video.Description
+
+</div>
+
+</div>
+
+<script src="http://vjs.zencdn.net/6.6.3/video.js"></script>
