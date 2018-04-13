@@ -1,6 +1,8 @@
 ﻿@using VideoOnDemand.UI.Models.MembershipViewModel
 @model VideoViewModel
 
+
+
 <div class="panel">
 
     @if (Model.Video.Url != null)
@@ -12,6 +14,11 @@
         <div id="hiddenUrl" hidden="hidden">@Model.Video.Url</div>
 
         <div id="hiddenImageUrl" hidden="hidden">@Model.Video.Thumbnail</div>
+        <div class="vid">
+            <iframe width="560" height="315"
+                    src="@Model.Video.Url" frameborder="0" allow="autoplay; encrypted-media"
+                    allowfullscreen></iframe>
+        </div>
 
     }
 

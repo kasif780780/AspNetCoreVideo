@@ -132,7 +132,7 @@ namespace VideoOnDemand.UI.Repositories
 
                 Title = "Video 1 Title", Description = "Video 1 Description: A very very long description.",
 
-                Duration = 50, Thumbnail = "/images/video1.jpg", Url = "https://www.youtube.com/watch?v=BJFyzpBcaCY"
+                Duration = 50, Thumbnail = "/images/video1.jpg", Url = "https://www.youtube.com/embed/QP0asgaAt_Q"
 
             },
 

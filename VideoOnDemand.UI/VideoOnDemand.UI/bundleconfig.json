@@ -12,7 +12,8 @@
       "wwwroot/css/Membership.css",
       "wwwroot/css/course.css",
       "wwwroot/css/module.css",
-      "wwwroot/css/instructor.css"
+      "wwwroot/css/instructor.css",
+      "wwwroot/css/video.cs"
     ]
   },
   {
