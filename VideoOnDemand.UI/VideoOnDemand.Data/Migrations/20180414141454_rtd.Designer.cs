@@ -11,8 +11,8 @@ using VideoOnDemand.Data.Data;
 namespace VideoOnDemand.Data.Migrations
 {
     [DbContext(typeof(VODContext))]
-    [Migration("20180413135015_CreateVideoRelatedData")]
-    partial class CreateVideoRelatedData
+    [Migration("20180414141454_rtd")]
+    partial class rtd
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {

@@ -5,7 +5,7 @@ using System.Collections.Generic;
 
 namespace VideoOnDemand.Data.Migrations
 {
-    public partial class CreateVideoRelatedData : Migration
+    public partial class rtd : Migration
     {
         protected override void Up(MigrationBuilder migrationBuilder)
         {

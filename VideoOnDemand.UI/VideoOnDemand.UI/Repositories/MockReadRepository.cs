@@ -106,7 +106,7 @@ namespace VideoOnDemand.UI.Repositories
 
         {
 
-            new Instructor{ Id = 1, Name = "John Doe",
+            new Instructor{ Id = 1, Name = "Mohd Asif",
 
                 Thumbnail = "/images/Ice-Age-Scrat-icon.png",
 
@@ -114,7 +114,7 @@ namespace VideoOnDemand.UI.Repositories
 
             },
 
-             new Instructor{ Id = 2, Name = "Jane Doe",
+             new Instructor{ Id = 2, Name = "Mohd Asif",
 
                  Thumbnail = "/images/Ice-Age-Scrat-icon.png",
 
