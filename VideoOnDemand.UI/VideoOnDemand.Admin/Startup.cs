@@ -11,6 +11,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 using VideoOnDemand.Data.Data;
 using VideoOnDemand.Data.Data.Entities;
+using VideoOnDemand.Data.Services;
 
 namespace VideoOnDemand.Admin
 {
@@ -34,7 +35,7 @@ namespace VideoOnDemand.Admin
                 .AddDefaultTokenProviders();
 
             services.AddMvc();
-               
+            services.AddTransient<IDbReadService, DbReadService>(); 
 
             // Register no-op EmailSender used by account confirmation and password reset during development
             // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=532713
