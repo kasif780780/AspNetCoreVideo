@@ -10,7 +10,7 @@ namespace VideoOnDemand.Admin.Models
     {
         [Required]
         [Display(Name ="User Id")]
-        public int Id { get; set; }
+        public string Id { get; set; }
 
         [Required]
         [Display(Name ="Eamil")]
