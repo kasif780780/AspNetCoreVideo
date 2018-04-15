@@ -1,4 +1,5 @@
 ﻿using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -52,6 +53,21 @@ namespace VideoOnDemand.Admin.Services
             };
             var result = await _userManager.CreateAsync(dbUser, user.Password);
             return result;
+        }
+
+        public async Task<bool> UpdateUser(UserPageModel user)
+        {
+            var dbUser = await _db.Users.FirstOrDefaultAsync(u => u.Id.Equals(user.Id)); if (dbUser == null) return false; if (string.IsNullOrEmpty(user.Email)) return false;
+
+            dbUser.Email = user.Email;
+
+            var userRole = new IdentityUserRole<string>() { RoleId = "1", UserId = user.Id };
+
+            var isAdmin = await _db.UserRoles.AnyAsync(ur => ur.Equals(userRole));
+
+            if (isAdmin && !user.IsAdmin) _db.UserRoles.Remove(userRole); else if (!isAdmin && user.IsAdmin) await _db.UserRoles.AddAsync(userRole);
+
+            var result = await _db.SaveChangesAsync(); return result >= 0;
         }
     }
 }
