@@ -9,6 +9,7 @@
         <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.css" />
         <link rel="stylesheet" href="~/css/site.css" />
         <link href="~/css/dashboard.css" rel="stylesheet" />
+        <link href="~/css/admin.css" rel="stylesheet" />
     </environment>
     <environment exclude="Development">
         <link rel="stylesheet" href="https://ajax.aspnetcdn.com/ajax/bootstrap/3.3.7/css/bootstrap.min.css"
@@ -31,6 +32,7 @@
             </div>
             <div class="navbar-collapse collapse">
                 @await Html.PartialAsync("_MenuPartial")
+                @await Html.PartialAsync("_AdminMenuPartial")
                 @await Html.PartialAsync("_LoginPartial")
             </div>
         </div>
