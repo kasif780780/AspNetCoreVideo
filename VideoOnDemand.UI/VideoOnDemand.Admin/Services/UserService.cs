@@ -43,7 +43,7 @@ namespace VideoOnDemand.Admin.Services
                 IsAdmin = _db.UserRoles.Any(ur => ur.UserId.Equals(user.Id) && ur.RoleId.Equals(1.ToString())) }).FirstOrDefault();
         }
 
-        public async Task<IdentityResult> AddUser(RegisterUserPageModel user)
+        public async Task<IdentityResult> AddUserAsync(RegisterUserPageModel user)
         {
             var dbUser = new User
             {
@@ -55,7 +55,7 @@ namespace VideoOnDemand.Admin.Services
             return result;
         }
 
-        public async Task<bool> UpdateUser(UserPageModel user)
+        public async Task<bool> UpdateUserAsync(UserPageModel user)
         {
             var dbUser = await _db.Users.FirstOrDefaultAsync(u => u.Id.Equals(user.Id)); if (dbUser == null) return false; if (string.IsNullOrEmpty(user.Email)) return false;
 
