@@ -7,7 +7,6 @@ using Microsoft.AspNetCore.Identity;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.Extensions.Logging;
-
 using VideoOnDemand.Data.Data.Entities;
 
 namespace VideoOnDemand.Admin.Pages.Account
@@ -17,18 +16,18 @@ namespace VideoOnDemand.Admin.Pages.Account
         private readonly SignInManager<User> _signInManager;
         private readonly UserManager<User> _userManager;
         private readonly ILogger<LoginModel> _logger;
-        
+       
 
         public RegisterModel(
             UserManager<User> userManager,
             SignInManager<User> signInManager,
-            ILogger<LoginModel> logger
-           )
+            ILogger<LoginModel> logger)
+            
         {
             _userManager = userManager;
             _signInManager = signInManager;
             _logger = logger;
-           
+            
         }
 
         [BindProperty]
@@ -72,8 +71,8 @@ namespace VideoOnDemand.Admin.Pages.Account
                     _logger.LogInformation("User created a new account with password.");
 
                     var code = await _userManager.GenerateEmailConfirmationTokenAsync(user);
-                   
-                   
+                    var callbackUrl = Url.EmailConfirmationLink(user.Id, code, Request.Scheme);
+                  
 
                     await _signInManager.SignInAsync(user, isPersistent: false);
                     return LocalRedirect(Url.GetLocalUrl(returnUrl));

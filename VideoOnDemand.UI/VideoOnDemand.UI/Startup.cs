@@ -10,7 +10,7 @@ using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
 
 using VideoOnDemand.UI.Models;
-using VideoOnDemand.UI.Services;
+
 using VideoOnDemand.Data.Data;
 using VideoOnDemand.Data.Data.Entities;
 using VideoOnDemand.UI.Repositories;
@@ -40,10 +40,10 @@ namespace VideoOnDemand.UI
                 .AddDefaultTokenProviders();
 
             // Add application services.
-            services.AddTransient<IEmailSender, EmailSender>();
+           // services.AddTransient<IEmailSender, EmailSender>();
           // services.AddSingleton<IReadRepository, MockReadRepository>();
           services.AddScoped<IReadRepository, SqlReadRepository>();
-           // services.AddTransient<IDbReadService, DbReadService>();
+            services.AddTransient<IDbReadService, DbReadService>();
             services.AddMvc();
             var config = new AutoMapper.MapperConfiguration(cfg =>
             {

@@ -7,7 +7,7 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideoOnDemand.UI", "VideoOn
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "VideoOnDemand.Data", "VideoOnDemand.Data\VideoOnDemand.Data.csproj", "{FB45D6EC-EBAC-43A7-8203-BDA15D695B17}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoOnDemand.Admin", "VideoOnDemand.Admin\VideoOnDemand.Admin.csproj", "{C74ED6F8-97E9-4C41-958A-3FB117AA5138}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "VideoOnDemand.Admin", "VideoOnDemand.Admin\VideoOnDemand.Admin.csproj", "{7B7C18A2-C688-4050-8809-2A00D54BAFE6}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -23,10 +23,10 @@ Global
 		{FB45D6EC-EBAC-43A7-8203-BDA15D695B17}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{FB45D6EC-EBAC-43A7-8203-BDA15D695B17}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{FB45D6EC-EBAC-43A7-8203-BDA15D695B17}.Release|Any CPU.Build.0 = Release|Any CPU
-		{C74ED6F8-97E9-4C41-958A-3FB117AA5138}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{C74ED6F8-97E9-4C41-958A-3FB117AA5138}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{C74ED6F8-97E9-4C41-958A-3FB117AA5138}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{C74ED6F8-97E9-4C41-958A-3FB117AA5138}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7B7C18A2-C688-4050-8809-2A00D54BAFE6}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7B7C18A2-C688-4050-8809-2A00D54BAFE6}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7B7C18A2-C688-4050-8809-2A00D54BAFE6}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7B7C18A2-C688-4050-8809-2A00D54BAFE6}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

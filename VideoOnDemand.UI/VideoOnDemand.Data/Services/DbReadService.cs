@@ -22,7 +22,7 @@ namespace VideoOnDemand.Data.Services
         }
 
 
-
+        //Fetching All Records in a Table (Get) 
         public IQueryable<TEntity> Get<TEntity>() where TEntity : class
 
         {
