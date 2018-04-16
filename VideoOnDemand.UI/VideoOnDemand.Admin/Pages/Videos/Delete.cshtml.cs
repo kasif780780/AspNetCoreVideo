@@ -1,91 +1,94 @@
-﻿//using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
 
-//using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc;
 
-//using Microsoft.AspNetCore.Mvc.RazorPages;
+using Microsoft.AspNetCore.Mvc.RazorPages;
 
-//using VideoOnDemand.Admin.Services;
+using Microsoft.AspNetCore.Authorization;
 
-//using VideoOnDemand.Admin.Models;
+using VideoOnDemand.Data.Services;
 
+using VideoOnDemand.Data.Data.Entities;
+using VideoOnDemand.Data.Entities;
 
+namespace VideoOnDemand.Admin.Pages.Videos
 
-//namespace VideoOnDemand.Admin.Pages.Users
+{
 
-//{
+    [Authorize(Roles = "Admin")]
 
-//    public class DeleteModel : PageModel
+    public class DeleteModel : PageModel
 
-//    {
+    {
 
-//        private IUserService _userService;
+        private IDbWriteService _dbWriteService;
 
-
-
-//        [BindProperty]
-
-//        public UserPageModel Input { get; set; } = new UserPageModel();
-
-
-
-//        [TempData]
-
-//        public string StatusMessage { get; set; }
+        private IDbReadService _dbReadService;
 
 
 
-//        public DeleteModel(IUserService userService)
+        [BindProperty] public Video Input { get; set; } = new Video();
 
-//        {
-
-//            _userService = userService;
-
-//        }
+        [TempData] public string StatusMessage { get; set; }
 
 
 
-//        public void OnGet(string userId)
+        public DeleteModel(IDbReadService dbReadService,
 
-//        {
+        IDbWriteService dbWriteService)
 
-//            Input = _userService.GetUser(userId);
+        {
 
-//            StatusMessage = string.Empty;
+            _dbWriteService = dbWriteService;
 
-//        }
+            _dbReadService = dbReadService;
 
-
-
-//        public async Task<IActionResult> OnPostAsync()
-
-//        {
-
-//            if (ModelState.IsValid)
-
-//            {
-
-//                var result = await _userService.DeleteUser(Input.Id);
+        }
 
 
 
-//                if (result)
+        public void OnGet(int id)
 
-//                {
+        {
 
-//                    StatusMessage = $"User {Input.Email} was deleted.";
+            Input = _dbReadService.Get<Video>(id, true);
 
-//                    return RedirectToPage("Index");
-
-//                }
-
-//            }
+        }
 
 
 
-//            return Page();
+        public async Task<IActionResult> OnPostAsync()
 
-//        }
+        {
 
-//    }
+            if (ModelState.IsValid)
 
-//}
+            {
+
+                var success = await _dbWriteService.Delete(Input);
+
+
+
+                if (success)
+
+                {
+
+                    StatusMessage = $"Deleted Video: {Input.Title}.";
+
+                    return RedirectToPage("Index");
+
+                }
+
+            }
+
+
+
+            // If we got this far, something failed, redisplay form
+
+            return Page();
+
+        }
+
+    }
+
+}
