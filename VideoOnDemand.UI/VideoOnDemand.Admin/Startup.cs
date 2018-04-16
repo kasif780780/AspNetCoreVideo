@@ -36,11 +36,12 @@ namespace VideoOnDemand.Admin
                 .AddDefaultTokenProviders();
             services.AddTransient<IUserService, UserService>();
             services.AddMvc();
-            services.AddTransient<IDbReadService, DbReadService>(); 
+            services.AddTransient<IDbReadService, DbReadService>();
+            services.AddTransient<IDbWriteService, DbWriteService>();
 
             // Register no-op EmailSender used by account confirmation and password reset during development
             // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=532713
-            
+
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

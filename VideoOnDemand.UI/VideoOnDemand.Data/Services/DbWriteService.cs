@@ -1,12 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
+﻿using System.Threading.Tasks;
+
 using VideoOnDemand.Data.Data;
 
+
+
 namespace VideoOnDemand.Data.Services
+
 {
-    public class DbWriteService:IDbWriteService
+
+    public class DbWriteService : IDbWriteService
+
     {
 
         private VODContext _db;
@@ -18,6 +21,9 @@ namespace VideoOnDemand.Data.Services
             _db = db;
 
         }
+
+
+
         public async Task<bool> Add<TEntity>(TEntity item) where TEntity : class
 
         {
